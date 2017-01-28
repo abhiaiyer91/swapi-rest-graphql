@@ -6,6 +6,8 @@
   "repository": "https://github.com/apollostack/swapi-rest-graphql",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.16.0",
+    "cors": "^2.8.1",
     "dataloader": "^1.1.0",
     "express": "^4.13.3",
     "express-graphql": "^0.4.5",

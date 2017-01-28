@@ -1,14 +1,21 @@
 import { Schema } from './schema.js';
 import graphqlHTTP from 'express-graphql';
 import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const app = express();
 
-app.get('/', function(req, res) {
+app.use(cors());
+
+app.get('/', function (req, res) {
   res.redirect('/graphql');
 });
 
-app.use('/graphql', graphqlHTTP({ schema: Schema, graphiql: true }));
+app.use('/graphql', bodyParser.json(), graphqlHTTP({
+  schema: Schema,
+  graphiql: true
+}));
 
 app.listen(3000);
 
